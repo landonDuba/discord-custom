@@ -1,16 +1,24 @@
 {
-    "manifest_version": 3,
-    "name": "Discord PFP Changer",
-    "version": "1.0.0",
-    "description": "Simple Discord profile picture changer",
-    "permissions": [
-      "activeTab",
-      "https://discord.com/*"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["https://discord.com/*"],
-        "js": ["content.js"]
-      }
-    ]
+  "manifest_version": 3,
+  "name": "Discord PFP Changer",
+  "version": "1.0.0",
+  "description": "Simple Discord profile picture changer",
+  "permissions": [
+    "activeTab",
+    "https://discord.com/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://discord.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html", 
+    "default_icon": {
+    }
+  },
+  "icons": {
   }
+}
