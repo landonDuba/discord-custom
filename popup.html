@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Discord GIF Avatar</title>
-  <style>
-    body {
-      width: 300px;
-      padding: 15px;
-      font-family: Arial, sans-serif;
-    }
-    h2 {
-      margin-top: 0;
-    }
-    .input-group {
-      margin-bottom: 15px;
-    }
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-    #preview {
-      max-width: 100px;
-      max-height: 100px;
-      display: none;
-      margin-top: 10px;
-    }
-    button {
-      padding: 8px 12px;
-      background: #5865F2;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #4752C4;
-    }
-  </style>
+  <title>Discord Customizer</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h2>Discord GIF Avatar</h2>
+  <h2>Discord Customizer</h2>
+  <p>The below section is for updating your profile picture</p>
   
-  <div class="input-group">
+  <div class="input-group" id="idDiv">
     <label for="userId">Your Discord User ID:</label>
     <input type="text" id="userId" placeholder="e.g., 1234248313432182844">
+    <button id="saveId">Save ID</button>
+    <span id="idStatus" style="margin-left: 10px;"></span>
   </div>
 
-  <div class="input-group">
+  <div class="input-group" id="gifDiv">
     <label for="gifUrl">Your GIF URL:</label>
     <input type="text" id="gifUrl" placeholder="e.g., https://xyz/giphy.com">
+    <button id="saveGif">Save GIF</button>
+    <span id="gifStatus" style="margin-left: 10px;"></span>
   </div>
-  
-  <button id="saveButton">Save Settings</button>
+
+  <hr>
+  <p>The below section is for updating your banner</p>
+
+  <div class="input-group" id="nameDiv">
+    <label for="discordName">Your Discord username:</label>
+    <input type="text" id="nameInput" placeholder="e.g., johnsmith1">
+    <button id="saveName">Save Name</button>
+    <span id="nameStatus" style="margin-left: 10px;"></span>
+  </div>
+
+  <div class="input-group" id="gifBannerDiv">
+    <label for="discordName">Your GIF URL:</label>
+    <input type="text" id="bannerInput" placeholder="e.g., https://xyz/giphy.com">
+    <button id="saveBanner">Save GIF</button>
+    <span id="bannerStatus" style="margin-left: 10px;"></span>
+  </div>
+
+  <!--
+  <hr>
+  <p>Toggle the box below to add a theme</p>
+  <input type="checkbox" style="height: 15px; width: 15px;">
+  -->
   
   <script src="popup.js"></script>
 </body>
