@@ -78,11 +78,12 @@ async function changeProfilePictures() {
 
   /*
   Code for the popout theme
-  */
+  
   const popoutWhole = document.querySelector(".outer_c0bea0 ");
-  popoutWhole.className = "outer_c0bea0 theme-light images-light user-profile-popout custom-theme-background custom-user-profile-theme";
-  popoutWhole.style = "--profile-gradient-primary-color: hsla(36, 100%, 50%, 1); --profile-gradient-secondary-color: hsla(237, 100%, 30%, 1); --profile-gradient-overlay-color: #ffffff99; --profile-gradient-button-color: hsla(26, 100%, 28%, 1); --theme-base-color-light-hsl: 36.470588235294095 100% 90%; --theme-base-color-light: rgb(255,235,204); --theme-text-color-light: rgb(0,7,128); --theme-base-color-dark-hsl: 237.6923076923077 100% 5.098039215686274%; --theme-base-color-dark: rgb(0,1,26); --theme-text-color-dark: rgb(255,245,229); --theme-base-color-amount: 50%; --theme-text-color-amount: 25%; --bg-overlay-selected: unset; --bg-overlay-hover: unset; --bg-overlay-active: unset;";
-
+  popoutWhole.className = "outer_c0bea0 theme-dark images-dark user-profile-popout custom-theme-background custom-user-profile-theme";
+  popoutWhole.style = "--profile-gradient-primary-color: rgb(64, 233, 126); --profile-gradient-secondary-color: hsla(203, 60%, 47.1%, 1); --profile-gradient-overlay-color: #00000099; --profile-gradient-button-color: hsla(201, 100%, 16.1%, 1); --theme-base-color-light-hsl: 203.5294117647059 100% 90%; --theme-base-color-light: rgb(204,235,255); --theme-text-color-light: rgb(0,82,128); --theme-base-color-dark-hsl: 203.07692307692307 100% 5.098039215686274%; --theme-base-color-dark: rgb(0,16,26); --theme-text-color-dark: rgb(153,215,255); --theme-base-color-amount: 50%; --theme-text-color-amount: 25%; --bg-overlay-selected: unset; --bg-overlay-hover: unset; --bg-overlay-active: unset;";
+  */
+ 
 }
 
 
