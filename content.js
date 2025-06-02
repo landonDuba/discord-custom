@@ -34,6 +34,26 @@ async function getBanner() {
 }
 
 
+async function getColor1() {
+  const color1 = await chrome.storage.local.get(["color1"]);
+  console.log("THE result IS", color1);
+  console.log("THE color1 IS", color1.color1);
+  return color1.color1;
+}
+
+
+async function getColor2() {
+  const color2 = await chrome.storage.local.get(["color2"]);
+  return color2.color2;
+}
+
+
+async function getThemeToggle() {
+  const themeSet = await chrome.storage.local.get(["setTheme"]);
+  return themeSet.setTheme;
+}
+
+
 async function changeProfilePictures() {
   const gifUrl = await getGifUrl();
   const idNum = await getId();
@@ -78,12 +98,23 @@ async function changeProfilePictures() {
 
   /*
   Code for the popout theme
-  
-  const popoutWhole = document.querySelector(".outer_c0bea0 ");
-  popoutWhole.className = "outer_c0bea0 theme-dark images-dark user-profile-popout custom-theme-background custom-user-profile-theme";
-  popoutWhole.style = "--profile-gradient-primary-color: rgb(64, 233, 126); --profile-gradient-secondary-color: hsla(203, 60%, 47.1%, 1); --profile-gradient-overlay-color: #00000099; --profile-gradient-button-color: hsla(201, 100%, 16.1%, 1); --theme-base-color-light-hsl: 203.5294117647059 100% 90%; --theme-base-color-light: rgb(204,235,255); --theme-text-color-light: rgb(0,82,128); --theme-base-color-dark-hsl: 203.07692307692307 100% 5.098039215686274%; --theme-base-color-dark: rgb(0,16,26); --theme-text-color-dark: rgb(153,215,255); --theme-base-color-amount: 50%; --theme-text-color-amount: 25%; --bg-overlay-selected: unset; --bg-overlay-hover: unset; --bg-overlay-active: unset;";
   */
- 
+  const themeSet = await getThemeToggle();
+  if (themeSet){
+    const color1 = await getColor1();
+    const color2 = await getColor2();
+    const popoutWhole = document.querySelector(".outer_c0bea0");
+    popoutWhole.className = "outer_c0bea0 theme-dark images-dark user-profile-popout custom-theme-background custom-user-profile-theme";
+    popoutWhole.style = `--profile-gradient-primary-color: ${color1}; 
+    --profile-gradient-secondary-color: ${color2}; 
+    --profile-gradient-overlay-color: #00000099; 
+    --profile-gradient-button-color: hsla(201, 100%, 16.1%, 1);
+     --theme-base-color-light-hsl: 203.5294117647059 100% 90%; 
+     --theme-base-color-light: rgb(204,235,255); --theme-text-color-light: rgb(0,82,128); --theme-base-color-dark-hsl: 203.07692307692307 100% 5.098039215686274%; 
+     --theme-base-color-dark: rgb(0,16,26); --theme-text-color-dark: rgb(153,215,255); --theme-base-color-amount: 50%; --theme-text-color-amount: 25%; 
+     --bg-overlay-selected: unset; --bg-overlay-hover: unset; --bg-overlay-active: unset;`;
+  }
+
 }
 
 

@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const saveNameButton = document.getElementById('saveName');
   const saveBannerButton = document.getElementById('saveBanner');
 
+  const color1 = document.getElementById('color1');
+  const color1SaveButton = document.getElementById('saveColor1');
+  const color2 = document.getElementById('color2');
+  const color2SaveButton = document.getElementById('saveColor2');
+
+  const setTheme = document.getElementById('setTheme');
+  const removeTheme = document.getElementById('removeTheme');
+
+
 
   saveIdButton.addEventListener('click', () => {
     const id = idUpload.value.trim();
@@ -85,6 +94,48 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('bannerStatus').textContent = "Saved GIF!";
     }
   })
+
+
+  color1SaveButton.addEventListener("click", () => {
+    const value = color1.value;
+    console.log("value of color 1: " + value);
+
+    chrome.storage.local.set({
+          'color1' : value
+        }).then(() => {
+          document.getElementById('color1Status').textContent = "Color 1 Saved";
+        })
+
+
+  })
+
+
+  color2SaveButton.addEventListener("click", () => {
+  const value = color2.value;
+  console.log("value of color 2: " + value);
+
+  chrome.storage.local.set({
+          'color2' : value
+        }).then(() => {
+          document.getElementById('color2Status').textContent = "Color 2 Saved";
+        })
+})
+
+
+  setTheme.addEventListener('click', () => {
+    chrome.storage.local.set({
+          'setTheme' : true
+        })
+    document.getElementById('themeStatus').textContent = "Theme Set";
+  });
+
+
+  removeTheme.addEventListener("click", () => {
+    chrome.storage.local.set({
+          'setTheme' : false
+        })
+    document.getElementById('themeStatus').textContent = "Theme Removed";
+  })
   
   /*
   Old event listener for when events were not updated individually
@@ -107,6 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
   */
 
 })
+
+
 
 
 

@@ -6,7 +6,7 @@
 </head>
 <body>
   <h2>Discord Customizer</h2>
-  <p>The below section is for updating your profile picture</p>
+  <h4>Change Profile Picture</h4>
   
   <div class="input-group" id="idDiv">
     <label for="userId">Your Discord User ID:</label>
@@ -23,7 +23,7 @@
   </div>
 
   <hr>
-  <p>The below section is for updating your banner</p>
+  <h4>Change Banner Picture</h4>
 
   <div class="input-group" id="nameDiv">
     <label for="discordName">Your Discord username:</label>
@@ -33,7 +33,7 @@
   </div>
 
   <div class="input-group" id="gifBannerDiv">
-    <label for="discordName">Your GIF URL:</label>
+    <label for="bannerUrl">Your GIF URL:</label>
     <input type="text" id="bannerInput" placeholder="e.g., https://xyz/giphy.com">
     <button id="saveBanner">Save GIF</button>
     <span id="bannerStatus" style="margin-left: 10px;"></span>
@@ -44,6 +44,27 @@
   <p>Toggle the box below to add a theme</p>
   <input type="checkbox" style="height: 15px; width: 15px;">
   -->
+
+  <hr>
+  <div class="input-group" id="gifBannerDiv">
+    <h4>Change Popout Theme</h4>
+
+    <label for="color1">Primary Color</label>
+    <input type="color" id="color1" value="#ff0000" style="width: 100px;">
+    <button id="saveColor1">Save Color</button>
+    <span id="color1Status" style="margin-left: 10px;"></span>
+
+    <label for="color1">Secondary Color</label>
+    <input type="color" id="color2" value="#ff0000" style="width: 100px;">
+    <button id="saveColor2">Save Color</button>
+    <span id="color2Status" style="margin-left: 10px;"></span>
+
+      <div>
+       <button id="setTheme">Save Theme</button>
+       <button id="removeTheme" style="margin-top: 10px; margin-left: 10px;">Remove Theme</button>
+       <span id="themeStatus" style="margin-left: 10px;"></span>
+    </div>
+  </div>
   
   <script src="popup.js"></script>
 </body>
