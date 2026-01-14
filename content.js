@@ -1,7 +1,6 @@
 console.log("Content script loaded!");
 
 // CONFIGURATION
-//REMOVE BEFORE RELEASE: 1234248313432182844
 const YOUR_USER_ID = "1234248313432182844"; // Replace with your ID from the URL
 // https://media.giphy.com/media/r0vMIQG66Y6x5P5FYs/giphy.gif
 let YOUR_GIF_URL = "";
@@ -140,4 +139,5 @@ function init() {
 
 // Start with delay to allow DOM load
 setTimeout(init, 2000);
+
 
